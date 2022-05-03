@@ -9,13 +9,13 @@ describe("Prueba FizzBuzz", () => {
     expect(explorerP1Trick).toHaveProperty("trick");
   });
   test("Comprobando las propiedades del explorer", () => {
-    const explorerP = { name: "ExplorerP", score: 1 };
+    const explorerP = { name: "ExplorerP", score: 7 };
     const explorerTrick = FizzbuzzService.applyValidationInExplorer(explorerP);
 
     expect(explorerTrick).toEqual({
       name: "ExplorerP",
-      score: 1,
-      trick: 1,
+      score: 7,
+      trick: 7,
     });
   });
   test("Trick = score si el resto entre 5 y 3 no es 0", () => {
@@ -23,5 +23,11 @@ describe("Prueba FizzBuzz", () => {
     const explorerTrick = FizzbuzzService.applyValidationInExplorer(explorer1);
 
     expect(explorerTrick.trick).toBe(1);
+  });
+  test("Trick = FIZZ (resto entre 3 = 0)", () => {
+    const explorer3 = { name: "Explorer3", score: 3 };
+    const explorer3Trick = FizzbuzzService.applyValidationInExplorer(explorer3);
+
+    expect(explorer3Trick.trick).toBe("FIZZ");
   });
 });
