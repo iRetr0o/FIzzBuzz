@@ -9,7 +9,7 @@ describe("Pruebas al reader", () => {
   test("2 Comprobando que un explorer tenga cierto stack", () => {
     const explorers = Reader.readJsonFile("explorers.json");
 
-    expect(explorers[1].stacks).toContain("elixir");
+    expect(explorers[1].stacks).toContain("javascript");
   });
   test("3 Regresando un explorer", () => {
     const explorers = Reader.readJsonFile("explorers.json");
