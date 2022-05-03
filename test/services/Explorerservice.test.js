@@ -41,4 +41,31 @@ describe("Pruebas para el ExplorerService", () => {
 
     expect(nodeExplorers).toBe(10);
   });
+  test("Usernames de explorers que estan en node", () => {
+    const usersInNode = ExplorerService.getExplorersUsernamesByMission(
+      explorers,
+      "node"
+    );
+
+    expect(usersInNode).toMatchObject([
+      "ajolonauta1",
+      "ajolonauta2",
+      "ajolonauta3",
+      "ajolonauta4",
+      "ajolonauta5",
+      "ajolonauta11",
+      "ajolonauta12",
+      "ajolonauta13",
+      "ajolonauta14",
+      "ajolonauta15",
+    ]);
+  });
+  test("Probando que sea un array", () => {
+    const usersInJava = ExplorerService.getExplorersUsernamesByMission(
+      explorers,
+      "java"
+    );
+
+    expect(usersInJava).toHaveLength(5);
+  });
 });
