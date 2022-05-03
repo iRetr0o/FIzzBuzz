@@ -11,4 +11,10 @@ describe("Prueba FizzBuzz", () => {
       trick: 1,
     });
   });
+  test("Trick = score si el resto entre 5 y 3 no es 0", () => {
+    const explorer1 = { name: "Explorer1", score: 1 };
+    const explorerTrick = FizzbuzzService.applyValidationInExplorer(explorer1);
+
+    expect(explorerTrick.trick).toBe(1);
+  });
 });
