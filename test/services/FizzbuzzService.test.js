@@ -36,4 +36,11 @@ describe("Prueba FizzBuzz", () => {
 
     expect(explorer5Trick.trick).toBe("BUZZ");
   });
+  test("Trick FIZZBUZZ (resto entre 5 y 3 = 0", () => {
+    const explorer15 = { name: "Explorer15", score: 15 };
+    const explorer15Trick =
+      FizzbuzzService.applyValidationInExplorer(explorer15);
+
+    expect(explorer15Trick.trick).toBe("FIZZBUZZ");
+  });
 });
