@@ -25,4 +25,20 @@ describe("Pruebas para el ExplorerService", () => {
       stacks: ["javascript", "elixir", "groovy", "reasonML", "elm"],
     });
   });
+  test("Cantidad de explorers en java", () => {
+    const javaExplorers = ExplorerService.getAmountOfExplorersByMission(
+      explorers,
+      "java"
+    );
+
+    expect(javaExplorers).toBe(5);
+  });
+  test("Cantidad de explorers en node", () => {
+    const nodeExplorers = ExplorerService.getAmountOfExplorersByMission(
+      explorers,
+      "node"
+    );
+
+    expect(nodeExplorers).toBe(10);
+  });
 });
