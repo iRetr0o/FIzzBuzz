@@ -17,4 +17,9 @@ describe("Prueba al ExplorerController", () => {
 
         expect(usernames).toContain("ajolonauta10");
     });
+    test("3 Regresando la cantidad de explorers que están en una misión", () => {
+        const explorersAmount = ExplorerController.getExplorersAmountByMission("node");
+
+        expect(explorersAmount).toEqual(10);
+    });
 });
