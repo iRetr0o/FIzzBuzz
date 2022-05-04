@@ -16,4 +16,4 @@ module.exports = {
         semi: ["error", "always"]
     }
 };
-//prettier-ignore
+
