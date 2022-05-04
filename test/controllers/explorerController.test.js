@@ -12,4 +12,9 @@ describe("Prueba al ExplorerController", () => {
             "stacks": ["javascript", "groovy", "elm"]
         });
     });
+    test("2 Regresando una username de los explorers que están en una misión", () => {
+        const usernames = ExplorerController.getExplorersUsernamesByMission("java");
+
+        expect(usernames).toContain("ajolonauta10");
+    });
 });
