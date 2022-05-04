@@ -22,4 +22,10 @@ describe("Prueba al ExplorerController", () => {
 
         expect(explorersAmount).toEqual(10);
     });
+    test("4 Probando el metodo fizzbuzz", () => {
+        const numero = 0;
+        const trick = ExplorerController.getValidationService(numero);
+
+        expect(trick).toBe("Fizzbuzz");
+    });
 });
