@@ -11,3 +11,6 @@ En esta practica realizamos:
 - Uso de GitHub Actions para Pruebas Automatizadas
 - Uso del Linter
 - Guía de estilo para escribir código
+- Creación de API con Express
+- Modularización y separación de responsabilidades
+- Lectura de archivos json
