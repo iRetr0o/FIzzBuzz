@@ -73,6 +73,6 @@ describe("Pruebas para el ExplorerService", () => {
             explorers, 
             "elixir"
         );
-        expect(stackElixir[0]).toContain("Woopa3");
+        expect(stackElixir[0].name).toContain("Woopa3");
     });
 });
