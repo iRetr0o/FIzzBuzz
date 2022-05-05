@@ -3,7 +3,7 @@ const explorers = Reader.readJsonFile("explorers.json");
 const ExplorerService = require("../../lib/services/Explorerservice");
 
 describe("Pruebas para el ExplorerService", () => {
-    test("Regresando el primer explorer que esta en java", () => {
+    test("1 Regresando el primer explorer que esta en java", () => {
         const explorersInJava = ExplorerService.filterByMission(explorers, "java");
 
         expect(explorersInJava[0]).toMatchObject({
@@ -14,7 +14,7 @@ describe("Pruebas para el ExplorerService", () => {
             stacks: ["elm"],
         });
     });
-    test("Regresando el ultimo explorer que esta en node", () => {
+    test("2 Regresando el ultimo explorer que esta en node", () => {
         const explorersInNode = ExplorerService.filterByMission(explorers, "node");
 
         expect(explorersInNode[9]).toMatchObject({
@@ -25,7 +25,7 @@ describe("Pruebas para el ExplorerService", () => {
             stacks: ["javascript", "elixir", "groovy", "reasonML", "elm"],
         });
     });
-    test("Cantidad de explorers en java", () => {
+    test("3 Cantidad de explorers en java", () => {
         const javaExplorers = ExplorerService.getAmountOfExplorersByMission(
             explorers,
             "java"
@@ -33,7 +33,7 @@ describe("Pruebas para el ExplorerService", () => {
 
         expect(javaExplorers).toBe(5);
     });
-    test("Cantidad de explorers en node", () => {
+    test("4 Cantidad de explorers en node", () => {
         const nodeExplorers = ExplorerService.getAmountOfExplorersByMission(
             explorers,
             "node"
@@ -41,7 +41,7 @@ describe("Pruebas para el ExplorerService", () => {
 
         expect(nodeExplorers).toBe(10);
     });
-    test("Usernames de explorers que estan en node", () => {
+    test("5 Usernames de explorers que estan en node", () => {
         const usersInNode = ExplorerService.getExplorersUsernamesByMission(
             explorers,
             "node"
@@ -60,12 +60,19 @@ describe("Pruebas para el ExplorerService", () => {
             "ajolonauta15",
         ]);
     });
-    test("Probando que sea un array", () => {
+    test("6 Probando que sea un array", () => {
         const usersInJava = ExplorerService.getExplorersUsernamesByMission(
             explorers,
             "java"
         );
 
         expect(usersInJava).toHaveLength(5);
+    });
+    test("7 Filtrando explorers por stack", () => {
+        const stackElixir = ExplorerService.filterByStack(
+            explorers, 
+            "elixir"
+        );
+        expect(stackElixir[0]).toContain("Woopa3");
     });
 });
