@@ -28,4 +28,15 @@ describe("Prueba al ExplorerController", () => {
 
         expect(trick).toBe("Fizzbuzz");
     });
+    test("5 Probando el metodo de filtrar por stack", () => {
+        const stack = ExplorerController.getExplorersByStack("groovy");
+
+        expect(stack[0]).toMatchObject({
+            "name": "Woopa2",
+            "githubUsername": "ajolonauta2",
+            "score": 2,
+            "mission": "node",
+            "stacks": ["javascript", "groovy", "elm"]
+        });
+    });
 });
